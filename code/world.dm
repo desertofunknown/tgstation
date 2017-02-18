@@ -6,8 +6,8 @@
 	cache_lifespan = 7
 	hub = "Exadv1.spacestation13"
 	hub_password = "kMZy3U5jJHSiBQjr"
-	name = "/tg/ Station 13"
-	fps = 20
+	name = "Slave Station"
+	fps = 30
 	visibility = 0
 #ifdef GC_FAILURE_HARD_LOOKUP
 	loop_checks = FALSE
@@ -307,7 +307,7 @@ var/last_irc_status = 0
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://cavecrawlers.com\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
 	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"

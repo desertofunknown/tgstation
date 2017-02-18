@@ -24,7 +24,7 @@
 					else
 						message_admins("<font color='red'><B>Notice: </B><font color='blue'>[key_name_admin(src)] has the same [matches] as [key_name_admin(M)] (no longer logged in). </font>")
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)] (no longer logged in).")
-
+mob/var/usragreed=null
 /mob/Login()
 	player_list |= src
 	update_Login_details()
@@ -73,3 +73,21 @@
 		client.click_intercept = null
 
 	client.view = world.view // Resets the client.view in case it was changed.
+	if(usragreed=null)
+		switch(alert("By pressing yes you agree that you are 18+ and have read the rules.","You sure?","Yes","No"))
+			if("Yes")
+				usragreed=1
+				usr << "Welcome [usr], thank you for joining Slave Station 13 enjoy and have a fun time."
+				return
+			if("No")
+				usragreed=0
+				message_admins("<span class='adminnotice'>[usr] denied that they are either 18+ or denied they read and agreed to the rules.</span>")
+				usr << "Goodbye [usr]."
+				Logout()
+				Del()
+				return
+	if(usragreed=0)
+		usr << "Goodbye [usr]."
+		Del()
+		message_admins("<span class='adminnotice'>[usr] denied that they are either 18+ or denied they read and agreed to the rules and is trying to login again.</span>")
+		usr.Logout()
