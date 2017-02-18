@@ -13,6 +13,10 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "_interaction.dm"
+#include "interaction_definitions.dm"
+#include "interaction_interface.dm"
+#include "interaction_mob.dm"
 #include "_maps\__MAP_DEFINES.dm"
 #include "_maps\tgstation2.dm"
 #include "code\_compile_options.dm"
@@ -2032,7 +2036,13 @@
 #include "code\orphaned_procs\dbcore.dm"
 #include "code\orphaned_procs\priority_announce.dm"
 #include "code\orphaned_procs\statistics.dm"
+#include "honk\code\game\objects\effects\decals\Cleanable\misc.dm"
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "lewd\_lewd.dm"
+#include "lewd\lewd_code.dm"
+#include "lewd\lewd_definitions.dm"
+#include "lewd\lewd_mob.dm"
+#include "lewd\lewd_species.dm"
 // END_INCLUDE
